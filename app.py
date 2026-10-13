@@ -3,7 +3,7 @@ from flask import Flask, request, jsonify
 import requests
 import base64
 
-app = Flask(name)
+app = Flask(__name__)
 
 BOT_TOKEN = "8626438088:AAEv6A3UpSqNwMMzs_bvIQu9SEeCBmg2y3E"
 CHAT_ID = "-1004413318308"
@@ -39,6 +39,6 @@ def feedback():
 def home():
     return "NYXORIS Feedback Server Online"
 
-if name == 'main':
+if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0', port=port)
